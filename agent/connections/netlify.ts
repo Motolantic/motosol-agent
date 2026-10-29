@@ -1,0 +1,8 @@
+import { connect } from "@vercel/connect/eve";
+import { defineMcpClientConnection } from "eve/connections";
+
+export default defineMcpClientConnection({
+  url: "https://netlify-mcp.netlify.app/mcp",
+  description: "Build and deploy websites.",
+  auth: connect("netlify-mcp.netlify.app/" + process.env.VERCEL_PROJECT_ID),
+});
